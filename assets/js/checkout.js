@@ -49,7 +49,7 @@ function renderCart() {
 			'">Remove</button>' +
 			"</div>" +
 			"</div>" +
-			'<div class="price">€ ' +
+			'<div class="price">NOK ' +
 			(item.qty * item.price).toFixed(2) +
 			"</div>" +
 			"</article>";
