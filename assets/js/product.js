@@ -43,9 +43,9 @@ function showToast(message) {
 function view(item) {
 	let priceHtml;
 	if (item.onSale) {
-		priceHtml = '<span class="price">' + Number(item.discountedPrice).toFixed(2) + '</span><span class="strike">' + Number(item.price).toFixed(2) + "</span>";
+		priceHtml = '<span class="price">NOK ' + Number(item.discountedPrice).toFixed(2) + '</span><span class="strike">NOK ' + Number(item.price).toFixed(2) + "</span>";
 	} else {
-		priceHtml = '<span class="price">' + Number(item.price).toFixed(2) + "</span>";
+		priceHtml = '<span class="price">NOK ' + Number(item.price).toFixed(2) + "</span>";
 	}
 
 	const tags = (item.tags || [])
