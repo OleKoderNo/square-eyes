@@ -33,7 +33,7 @@ function renderCart() {
 			'<div class="title">' +
 			item.title +
 			"</div>" +
-			'<div class="muted">€ ' +
+			'<div class="muted">NOK ' +
 			Number(item.price).toFixed(2) +
 			"</div>" +
 			'<div class="cart-item-actions">' +
@@ -57,7 +57,7 @@ function renderCart() {
 
 	html += "</div>";
 
-	html += '<div class="cart-total-row">' + '<div class="title">Total</div>' + '<div class="price">€ ' + cartTotal().toFixed(2) + "</div>" + "</div>";
+	html += '<div class="cart-total-row">' + '<div class="title">Total</div>' + '<div class="price">NOK ' + cartTotal().toFixed(2) + "</div>" + "</div>";
 
 	container.innerHTML = html;
 

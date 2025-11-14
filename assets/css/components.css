@@ -115,6 +115,9 @@ nav {
 	text-decoration: none;
 	border: 0;
 	cursor: pointer;
+	width: fit-content;
+	font-weight: 700;
+	margin-top: 8px;
 }
 
 .grid {

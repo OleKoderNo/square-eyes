@@ -50,11 +50,10 @@ function getActiveGenre() {
 }
 
 function createCard(item) {
-	let price;
 	if (item.onSale === true) {
-		price = '<span class="price">' + Number(item.discountedPrice).toFixed(2) + '</span><span class="strike">' + Number(item.price).toFixed(2) + "</span>";
+		price = '<span class="price">NOK ' + Number(item.discountedPrice).toFixed(2) + '</span><span class="strike">NOK ' + Number(item.price).toFixed(2) + "</span>";
 	} else {
-		price = '<span class="price">' + Number(item.price).toFixed(2) + "</span>";
+		price = '<span class="price">NOK ' + Number(item.price).toFixed(2) + "</span>";
 	}
 
 	const title = item.title || "Untitled";
