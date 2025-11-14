@@ -1,0 +1,240 @@
+.site-nav {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	position: relative;
+}
+.nav-link {
+	color: var(--text);
+	text-decoration: none;
+	padding: 8px 10px;
+	border-radius: 10px;
+	background: transparent;
+	border: 0;
+}
+.nav-link:hover {
+	background: rgba(255, 255, 255, 0.05);
+}
+.nav-group {
+	position: relative;
+}
+.nav-toggle {
+	background: none;
+	border: 0;
+	color: var(--text);
+	cursor: pointer;
+	padding: 8px 10px;
+	border-radius: 10px;
+}
+.nav-toggle:hover {
+	background: rgba(255, 255, 255, 0.05);
+}
+.dropdown {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: var(--card);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 12px;
+	padding: 8px;
+	min-width: 180px;
+	display: none;
+	z-index: 20;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.dropdown .dropdown-item {
+	display: block;
+	padding: 8px 10px;
+	border-radius: 8px;
+	color: var(--text);
+	text-decoration: none;
+}
+.dropdown .dropdown-item:hover {
+	background: rgba(255, 255, 255, 0.06);
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.nav-group:hover .dropdown {
+		display: block;
+	}
+}
+
+.nav-group[data-open="true"] .dropdown {
+	display: block;
+}
+
+.badge-count {
+	display: inline-block;
+	min-width: 0;
+	padding: 0;
+	font-size: 12px;
+	border-radius: 999px;
+	text-align: center;
+	margin-left: 8px;
+}
+
+.badge-count--active {
+	min-width: 18px;
+	padding: 2px 6px;
+	background: var(--accent);
+	color: #0b0d12;
+}
+
+nav {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	margin-top: 10px;
+}
+.chip {
+	background: var(--card);
+	color: var(--text);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 50px;
+	padding: 8px 12px;
+	cursor: pointer;
+	user-select: none;
+	transition: transform 0.06s ease;
+}
+
+/* animate the chip 1px up */
+.chip:hover {
+	transform: translateY(-1px);
+}
+
+.chip.active {
+	outline: 2px solid var(--accent);
+}
+
+.btn {
+	display: inline-block;
+	background: var(--accent);
+	color: #0b0d12;
+	padding: 10px 16px;
+	border-radius: 12px;
+	text-decoration: none;
+	border: 0;
+	cursor: pointer;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 16px;
+}
+.card {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: var(--radius);
+	overflow: hidden;
+	transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.thumb {
+	aspect-ratio: 16/9;
+	width: 100%;
+	object-fit: cover;
+	display: block;
+	background: #202535;
+}
+.pad {
+	padding: 12px;
+}
+.title {
+	font-size: 16px;
+	font-weight: 700;
+	margin: 2px 0 6px;
+}
+.muted {
+	color: var(--muted);
+	font-size: 13px;
+}
+.price {
+	font-weight: 700;
+}
+.strike {
+	text-decoration: line-through;
+	opacity: 0.6;
+	font-weight: 500;
+	margin-left: 8px;
+}
+a.card-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.detail {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+	align-items: start;
+}
+.detail .poster {
+	width: 100%;
+	max-width: 640px;
+	border-radius: var(--radius);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.detail .meta {
+	display: grid;
+	gap: 8px;
+}
+.badges {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+.badge {
+	background: var(--card);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 999px;
+	padding: 6px 10px;
+	font-size: 12px;
+	color: var(--muted);
+}
+
+.status {
+	padding: 18px;
+	border: 1px dashed rgba(255, 255, 255, 0.12);
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.04);
+}
+.error {
+	color: var(--danger);
+}
+
+.hidden {
+	display: none !important;
+}
+
+.toast {
+	position: fixed;
+	left: 50%;
+	bottom: 20px;
+	transform: translateX(-50%);
+	background: rgba(20, 24, 36, 0.95);
+	color: var(--text);
+	padding: 10px 16px;
+	border-radius: 999px;
+	font-size: 14px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+	z-index: 999;
+}
+
+.toast--visible {
+	opacity: 1;
+	transform: translateX(-50%) translateY(-4px);
+}
+
+@media (min-width: 900px) {
+	.detail {
+		grid-template-columns: 1fr 1.2fr;
+	}
+}

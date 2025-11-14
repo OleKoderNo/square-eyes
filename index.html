@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1" />
+		<title>Square Eyes</title>
+
+		<link
+			rel="stylesheet"
+			href="assets/css/variables.css" />
+		<link
+			rel="stylesheet"
+			href="assets/css/global.css" />
+		<link
+			rel="stylesheet"
+			href="assets/css/components.css" />
+		<script
+			type="module"
+			src="assets/js/home.js"></script>
+		<script
+			type="module"
+			src="assets/js/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="wrap">
+				<div class="row row-between">
+					<div class="brand"><a href="./">◼︎ Square Eyes</a></div>
+					<nav
+						class="site-nav"
+						aria-label="Main navigation">
+						<a
+							href="./"
+							class="nav-link"
+							>Home</a
+						>
+						<div
+							class="nav-group"
+							data-dropdown>
+							<button
+								class="nav-link nav-toggle"
+								aria-expanded="false"
+								aria-haspopup="true">
+								Categories
+							</button>
+							<div
+								class="dropdown"
+								role="menu">
+								<a
+									class="dropdown-item"
+									href="category/"
+									>All Genres</a
+								>
+								<a
+									class="dropdown-item"
+									href="category/?genre=Action"
+									>Action</a
+								>
+								<a
+									class="dropdown-item"
+									href="category/?genre=Drama"
+									>Drama</a
+								>
+								<a
+									class="dropdown-item"
+									href="category/?genre=Comedy"
+									>Comedy</a
+								>
+							</div>
+						</div>
+						<a
+							href="checkout/"
+							class="nav-link">
+							Cart
+							<span
+								id="cart-count"
+								class="badge-count"></span>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="wrap">
+			<section class="hero">
+				<h1 class="hero-title">Cinema at your fingertips</h1>
+				<p class="hero-sub">Discover, sort, and shop films across every genre.</p>
+				<a
+					class="btn"
+					href="category/"
+					>Browse Movies</a
+				>
+			</section>
+			<section
+				id="featured"
+				aria-labelledby="featured-title"
+				class="section-spacer-60">
+				<h2
+					id="featured-title"
+					class="section-heading-lg">
+					Featured Movies
+				</h2>
+				<div id="featured-content"></div>
+			</section>
+			<section
+				id="home-list"
+				aria-labelledby="home-list-title">
+				<h2 id="home-list-title">All Movies</h2>
+				<div id="home-list-content"></div>
+			</section>
+		</main>
+	</body>
+</html>

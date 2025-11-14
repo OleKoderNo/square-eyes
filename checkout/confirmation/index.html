@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1" />
+		<title>Thank you — Square Eyes</title>
+
+		<link
+			rel="stylesheet"
+			href="../../assets/css/variables.css" />
+		<link
+			rel="stylesheet"
+			href="../../assets/css/global.css" />
+		<link
+			rel="stylesheet"
+			href="../../assets/css/components.css" />
+		<script
+			type="module"
+			src="../../assets/js/confirmation.js"></script>
+		<script
+			type="module"
+			src="../../assets/js/nav.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="wrap">
+				<div class="row row-between">
+					<div class="brand"><a href="../../">◼︎ Square Eyes</a></div>
+					<nav
+						class="site-nav"
+						aria-label="Main navigation">
+						<a
+							href="../../"
+							class="nav-link"
+							>Home</a
+						>
+						<div
+							class="nav-group"
+							data-dropdown>
+							<button
+								class="nav-link nav-toggle"
+								aria-expanded="false"
+								aria-haspopup="true">
+								Categories
+							</button>
+							<div
+								class="dropdown"
+								role="menu">
+								<a
+									class="dropdown-item"
+									href="../../category/"
+									>All Genres</a
+								>
+								<a
+									class="dropdown-item"
+									href="../../category/?genre=Action"
+									>Action</a
+								>
+								<a
+									class="dropdown-item"
+									href="../../category/?genre=Drama"
+									>Drama</a
+								>
+								<a
+									class="dropdown-item"
+									href="../../category/?genre=Comedy"
+									>Comedy</a
+								>
+							</div>
+						</div>
+						<a
+							href="../"
+							class="nav-link">
+							Cart
+							<span
+								id="cart-count"
+								class="badge-count"></span>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main
+			class="wrap"
+			id="app">
+			<div class="status">Preparing confirmation…</div>
+		</main>
+	</body>
+</html>
