@@ -3,6 +3,7 @@ import { fetchAll } from "./api.js";
 
 let allMovies = [];
 
+// makes navigasjonsbar for movie genra
 function buildGenreNav(items) {
 	const nav = $("#genre-nav");
 	if (!nav) return;
@@ -49,7 +50,12 @@ function getActiveGenre() {
 	return (active.dataset.genre || "").toLowerCase();
 }
 
+function getFinalPrice(item) {
+	return item.onSale ? item.discountedPrice : item.price;
+}
+
 function createCard(item) {
+	let price;
 	if (item.onSale === true) {
 		price = '<span class="price">NOK ' + Number(item.discountedPrice).toFixed(2) + '</span><span class="strike">NOK ' + Number(item.price).toFixed(2) + "</span>";
 	} else {
@@ -129,11 +135,11 @@ function renderList() {
 		});
 	} else if (sort === "price-asc") {
 		results.sort(function (a, b) {
-			return a.discountedPrice - b.discountedPrice;
+			return getFinalPrice(a) - getFinalPrice(b);
 		});
 	} else if (sort === "price-desc") {
 		results.sort(function (a, b) {
-			return b.discountedPrice - a.discountedPrice;
+			return getFinalPrice(b) - getFinalPrice(a);
 		});
 	} else if (sort === "released-desc") {
 		results.sort(function (a, b) {
@@ -186,15 +192,18 @@ async function initCategories() {
 				break;
 			}
 		}
+
 		if (!found && chips.length > 0) {
 			chips[0].classList.add("active");
 		}
+
 		if (searchInput) {
 			searchInput.addEventListener("input", renderList);
 		}
 		if (sortSelect) {
 			sortSelect.addEventListener("change", renderList);
 		}
+
 		renderList();
 	} catch (error) {
 		if (app) {
